@@ -1,1 +1,376 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="InterHandGen"/>
+  <meta property="og:description" content="InterHandGen: Two-Hand Interaction Generation via Cascaded Reverse Diffusion (CVPR 2024)"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="InterHandGen">
+  <meta name="twitter:description" content="InterHandGen: Two-Hand Interaction Generation via Cascaded Reverse Diffusion (CVPR 2024)">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>HOGraspNet</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
+  <style>
+
+  .center {
+  text-align: center;
+  }
+
+  .image-doc{
+  padding: 0 25px;
+  }
+
+  </style>
+  
+
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Dense Hand-Object(HO) GraspNet with Full Grasping Taxonomy and Dynamics</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+
+                <span class="author-block">
+                <a href="" target="_blank">Woojin Cho</a><sup>1</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                <a href="https://jyunlee.github.io/" target="_blank">Jihyun Lee</a><sup>2</sup>,&nbsp;</span>
+                  
+                <span class="author-block">
+                <a href="" target="_blank">Minjae Yi</a><sup>2</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                    <a href="" target="_blank">Minje Kim</a><sup>2</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                    <a href="" target="_blank">Taeyun Woo</a><sup>2</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                    <a href="https://donghwankim0101.github.io/" target="_blank">Donghwan Kim</a><sup>2</sup>,&nbsp;</span>
+                
+                <span class="author-block">
+                    <a href="" target="_blank">Taewook Ha</a><sup>1</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                    <a href="" target="_blank">Hyokeun Lee</a><sup>3</sup>,&nbsp;</span>
+                
+                <span class="author-block">
+                    <a href="" target="_blank">Je-Hwan Ryu</a><sup>4</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                <a href="" target="_blank">Woontack Woo</a><sup>1, 5</sup>,&nbsp;</span>
+
+                <span class="author-block">
+                <a href="https://sites.google.com/view/tkkim/home" target="_blank">Tae-Kyun Kim</a><sup>2, 6</sup>
+                </span>
+                  
+                </div>
+
+                  <!-- <div class="is-size-5 publication-authors">
+                    <span class="author-block">KAIST UVR Lab.<sup>1</sup>
+                  </span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">KAIST CVL Lab.<sup>2</sup>
+                    <br>
+                    <b>ECCV 2024</b></span>
+                  </div> -->
+
+                
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">KAIST UVR Lab<sup>1</sup>, &nbsp;&nbsp; KAIST CVL Lab<sup>2</sup>, &nbsp;&nbsp;Kwangwoon University<sup>3</sup>, &nbsp;&nbsp;Surromind<sup>4</sup>, 
+                      <br>&nbsp;&nbsp;KAIST KI-ITC ARRC<sup>5</sup>, &nbsp;&nbsp;Imperial College London<sup>6</sup>
+                      <br><b>ECCV 2024</b>
+                    </span>
+                  </div>
+               
+                
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="./assets/ECCV24_HOGraspNet_camera-ready__.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper(TBD)</span>
+                      </a>
+                    </span>
+
+		      <!-- ArXiv abstract Link -->
+			<!-- <span class="link-block">
+			  <a href="https://arxiv.org/abs/2403.17422" target="_blank"
+			  class="external-link button is-normal is-rounded is-dark">
+			  <span class="icon">
+			    <i class="ai ai-arxiv"></i>
+			  </span>
+			  <span>arXiv</span>
+			</a>
+		      </span> -->
+
+                    <!-- Supplementary PDF link -->
+                    <!--
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+                -->
+                <!-- Dataset link -->
+                <span class="link-block">
+                  <a href="https://forms.gle/UqH15zN2PiBGQDUs7"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="far fa-images"></i>
+                    </span>
+                    <span>Data Download</span>
+                    </a>
+                    </span>
+
+                  <!-- Github link -->
+
+                  <span class="link-block">
+                    <a href="https://github.com/UVR-WJCHO/HOGraspNet" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<!--
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="item">
+      <video poster="" id="tree" muted loop autoplay="autoplay">
+        <source src="data/fig_teaser.mp4"
+        type="video/mp4">
+      </video>
+      <h4 class="subtitle has-text-centered">
+        🤝 <b>InterHandGen</b> generates two-hand interactions with or
+        without an object using a novel cascaded diffusion. This generative prior can be incorporated into any optimization or learning methods to reduce ambiguity in an ill-posed setup.
+      </h4>
+   </div>
+   <br><br>
+  </div>
+</section>
+-->
+<!-- End teaser video -->
+
+<section class="hero is-small">
+<div class="hero-body">
+    <div class="container">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+        <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+            <img src="assets/thumbnails.jpg">
+        </div>
+        <div class="item item-video2">
+            <img src="assets/DataOrganization.png">
+        </div>
+        <div class="item item-video3">
+            <img src="assets/HardwareSetup.png">
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Existing datasets for 3D hand-object interaction are limited either in the data cardinality, data variations in interaction scenarios, or the quality of annotations. In this work, we present a comprehensive new training dataset for hand-object interaction called HOGraspNet. It is the only real dataset that captures full grasp taxonomies, providing grasp annotation and wide intraclass variations. Using grasp taxonomies as atomic actions, their space and time combinatorial can represent complex hand activities around objects. We select 22 rigid objects from the YCB dataset and 8 other compound objects using shape and size taxonomies, ensuring coverage of all hand grasp configurations. The dataset includes diverse hand shapes from 99 participants aged 10 to 74, continuous video frames, and a 1.5M RGB-Depth of sparse frames with annotations. It offers labels for 3D hand and object meshes, 3D keypoints, contact maps, and grasp labels. Accurate hand and object 3D meshes are obtained by fitting the hand parametric model (MANO) and the hand implicit function (HALO) to multi-view RGBD frames, with the MoCap system only for objects. Note that HALO fitting does not require any parameter tuning, enabling scalability to the dataset's size with comparable accuracy to MANO. We evaluate HOGraspNet on relevant tasks: grasp classification and 3D hand pose estimation. The result shows performance variations based on grasp type and object class, indicating the potential importance of the interaction space captured by our dataset. The provided data aims at learning universal shape priors or foundation models for 3D hand-object interaction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<div class="section">
+
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    
+    <div class="column is-full">
+    <div class="content">
+
+    <h2 class="title is-3">Paper & Document</h2>
+
+    <div class="row content">
+        <div class="center image-doc">
+          <a href="./assets/ECCV24_HOGraspNet_camera-ready__.pdf" target="_blank">
+            <img src="./assets/pdf_ours.png" height="176px" width="136px">
+            <br>
+            <span class="icon"> <i class="fas fa-file-pdf"></i> </span>
+            <span>PDF(TBD)</span>
+          </a>
+        </div>
+        <div class="center image-doc">
+          <a href="./assets/ECCV24_HOGraspNet_camera-ready_supplementary__.pdf" target="_blank">
+            <img src="./assets/supplementary_ours.png" height="176px" width="136px">
+            <br>
+            <span class="icon"> <i class="fas fa-file-pdf"></i> </span>
+            <span>Supplementary(TBD)</span>
+          </a>
+        </div>
+        <div class="center">    
+          <a href="http://data.uvrlab.org/download/datasets/HOGraspNet/HOGraspNet_obj_models.zip" target="_blank">
+            <img src="./assets/cad.png" height="176px" width="136px">
+            <br>
+            <div style="width: 188px">
+              <span class="icon"> <i class="fas fa-file-alt"></i> </span>
+              <span>Scanned 3D Object Models</span>
+            </div>
+          </a>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+    
+</div>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+  
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">Grasp Configurations</h2>
+            <div class="level-set has-text-justified">
+              <img src="assets/PerObjectGrasp_all.png" alt="All grasp configurations" class="center-image"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{2024graspnet,
+        title={Dense Hand-Object(HO) GraspNet with Full Grasping Taxonomy and Dynamics},
+        author={Cho, Woojin and Lee, Jihyun and Yi, Minjae and Kim, Minje and Woo, Taeyun and Kim, Donghwan and Ha, Taewook and Lee, Hyokeun and Ryu, Je-Hwan and Woo, Woontack and Kim, Tae-Kyun},
+        booktitle={ECCV},
+        year={2024}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+<!--ACKNOWLEDGMENTS -->
+<section class="section" id="Ack">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Acknowledgements</h2>
+      <div class="content has-text-justified">
+        <p>
+          이 연구는 과학기술정보통신부의 재원으로 한국지능정보사회진흥원의 지원을 받아 구축된 "물체 조작 손 동작 3D 데이터"을 활용하여 수행된 연구입니다. 본 연구에 활용된 데이터는 <a href="http://aihub.or.kr/">AI 허브</a>에서 다운로드 받으실 수 있습니다.
+        </p>
+        <p>          
+        This research (paper) used datasets from 'The Open AI Dataset Project (AI-Hub, S. Korea)'. All data information can be accessed through <a href="http://www.aihub.or.kr/">AI-Hub</a>.
+        </p>
+    </div>
+  <!--/ Concurrent Work. -->
+</div>
+</section>
+<!--End ACKNOWLEDGMENTS -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

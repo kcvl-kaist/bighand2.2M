@@ -206,6 +206,49 @@
 </section>
 <!-- End paper abstract -->
 
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="column is-full">
+              <div class="content">
+                  <h2 class="title is-3">Depth-Based 3D Hand Pose Estimation</h2>
+                  <div class="level-set has-text-justified">
+                    <p>This task builds on BigHand2.2M dataset in a similar format to HANDS 2017 challenge. Hands appear in both 3rd person and egocentric viewpoints. No objects are present in this task.</p>
+    
+                    <ul>
+                        <li><strong>Training set:</strong> Contains images from 5 different subjects. Some hand articulations and viewpoints are strategically excluded.</li>
+                        <li><strong>Test set:</strong> Contains images from 10 different subjects. 5 subjects overlap with the training set. Exhaustive coverage of viewpoints and articulations.</li>
+                    </ul>
+                    
+                    <p>The following performance scores (as mean joint error) will be evaluated:</p>
+                    <ul>
+                        <li><strong>Interpolation (INTERP.):</strong> performance on test samples that have shape, viewpoints and articulations present in the training set.</li>
+                        <li><strong>Extrapolation:</strong>
+                            <ul>
+                                <li><strong>Total (EXTRAP.):</strong> performance on test samples that have hand shapes, viewpoints and articulations not present in the training set.</li>
+                                <li><strong>Shape (SHAPE):</strong> performance on test samples that have hand shapes not present in the training set. Viewpoints and articulations are present in the training set.</li>
+                                <li><strong>Articulation (ARTIC.):</strong> performance on test samples that have articulations not present in the training set. Shapes and viewpoints are present in the training set.</li>
+                                <li><strong>Viewpoint (VIEWP.):</strong> performance on test samples that have viewpoints not present in the training set. Shapes and articulations are present in the training set. Viewpoint is defined as elevation and azimuth angles of the hand respect to the camera. Both angles are analyzed independently.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <ul>
+                        <li>Use of fitted MANO model for synthesizing data is encouraged.</li>
+                        <li>Images are captured with Intel RealSense SR300 camera at 640 × 480-pixel resolution.</li>
+                        <li>Use of training data from HANDS 2017 challenge is <strong>not allowed</strong> as some images may overlap with the test set.</li>
+                        <li>Use of other labelled datasets (either real or synthetic) is <strong>not allowed</strong>. Use of fitted MANO model for synthesizing data is encouraged. Use of external unlabelled data is allowed (self-supervised and unsupervised methods).</li>
+                    </ul>
+                    
+                    <p>Task 1 <a href="https://codalab.lisn.upsaclay.fr/competitions/7109">Submission website</a></p>
+                  </div>
+                  <img src="./assets/EmbeddedImage.png" alt="Normal and Anomalous Representations" class="center-image"/>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
